@@ -1,3 +1,4 @@
+com.wordnik.swagger.codegen.languages.AgsJaxRSServerCodegen
 com.wordnik.swagger.codegen.languages.AndroidClientCodegen
 com.wordnik.swagger.codegen.languages.AsyncScalaClientCodegen
 com.wordnik.swagger.codegen.languages.CSharpClientCodegen

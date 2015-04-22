@@ -6,10 +6,10 @@
     <relativePath>../..</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.wordnik</groupId>
-  <artifactId>swagger-codegen</artifactId>
+  <groupId>com.avon.ags</groupId>
+  <artifactId>ags-swagger-codegen</artifactId>
   <packaging>jar</packaging>
-  <name>swagger-codegen (core library)</name>
+  <name>ags-swagger-codegen (core library)</name>
   <version>2.1.0-M2</version>
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
@@ -278,7 +278,7 @@
       <version>${swagger-parser-version}</version>
     </dependency>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>${project.parent.groupId}</groupId>
       <artifactId>swagger-core</artifactId>
       <version>${swagger-core-version}</version>
     </dependency>

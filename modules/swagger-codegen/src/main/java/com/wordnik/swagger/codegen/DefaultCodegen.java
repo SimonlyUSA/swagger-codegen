@@ -10,14 +10,13 @@ import com.wordnik.swagger.models.parameters.*;
 import com.wordnik.swagger.models.properties.*;
 import com.wordnik.swagger.util.Json;
 
+import org.apache.commons.cli.CommandLine;
 import org.apache.commons.lang.StringUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.*;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -1167,5 +1166,7 @@ public class DefaultCodegen {
     return word;
   }
 
-
+  public void init(CommandLine cmd) {
+  
+  }
 }

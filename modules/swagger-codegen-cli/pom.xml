@@ -66,9 +66,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.wordnik</groupId>
-            <artifactId>swagger-codegen</artifactId>
-            <version>${project.version}</version>
+            <groupId>com.avon.ags</groupId>
+            <artifactId>ags-swagger-codegen</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <!--https://github.com/airlift/airline-->
