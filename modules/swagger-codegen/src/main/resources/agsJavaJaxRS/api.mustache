@@ -2,10 +2,6 @@ package {{package}};
 
 import {{modelPackage}}.*;
 
-import com.avon.ags.api.base.AGSBaseRes;
-import com.avon.ags.api.base.AGSError;
-import com.avon.ags.api.base.AGSError.SeverityCd;
-
 import com.wordnik.swagger.annotations.*;
 import com.sun.jersey.multipart.FormDataParam;
 
@@ -94,32 +90,23 @@ public class {{classname}} {
 
   {{/operation}}
   
-    private Response handleException(Exception e) {
+  private Response handleException(Exception e) {
 
-	  Response ret = null;
-	  
-	  AGSBaseRes errorRes = new AGSBaseRes();
-	  errorRes.setErrors(new ArrayList<AGSError>());
-	  AGSError err = new AGSError();
-	  err.setErrorMsg(e.getMessage());
-	  
+      Response ret = null;
+    	
 	  if (e instanceof NotFoundException) {
-		  err.setSeverityCd(SeverityCd.WARNING);
-		  ret = Response.status(Status.NOT_FOUND).entity(errorRes).build();
+		  ret = Response.status(Status.NOT_FOUND).build();
 	  } else if (e instanceof BadRequestException) {
-		  err.setSeverityCd(SeverityCd.WARNING);
-		  ret = Response.status(Status.BAD_REQUEST).entity(errorRes).build(); 
+		  ret = Response.status(Status.BAD_REQUEST).build(); 
 	  } else if (e instanceof InternalServerErrorException) {
-		  err.setSeverityCd(SeverityCd.ERROR);
-		  ret = Response.status(Status.INTERNAL_SERVER_ERROR).entity(errorRes).build();
+		  ret = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 	  } else {
-		  err.setSeverityCd(SeverityCd.ERROR);
-		  ret = Response.status(Status.INTERNAL_SERVER_ERROR).entity(errorRes).build();
+		  ret = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 	  }
-	  errorRes.getErrors().add(err);
 	  
 	  return ret; 
   }
+
   
 }
 {{/operations}}
